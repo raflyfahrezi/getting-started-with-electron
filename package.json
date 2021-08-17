@@ -4,5 +4,8 @@
     "main": "main.js",
     "repository": "https://github.com/raflyfahrezi/getting-started-with-electron.git",
     "author": "Farhan Rafly Fahrezi S",
-    "license": "MIT"
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^13.1.9"
+    }
 }
