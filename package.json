@@ -1,10 +1,13 @@
 {
     "name": "getting-started-with-electron",
     "version": "1.0.0",
-    "main": "main.js",
+    "main": "app/main.js",
     "repository": "https://github.com/raflyfahrezi/getting-started-with-electron.git",
     "author": "Farhan Rafly Fahrezi S",
     "license": "MIT",
+    "scripts": {
+        "dev": "electron ."
+    },
     "devDependencies": {
         "electron": "^13.1.9"
     }
