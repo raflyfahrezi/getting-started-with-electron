@@ -1,6 +1,8 @@
 const url = require('url')
 const path = require('path')
-const { app, BrowserWindow } = require('electron')
+const { app, Menu, BrowserWindow } = require('electron')
+
+const { menuTemplate } = require('./utils')
 
 let mainWindow = null
 
@@ -16,4 +18,10 @@ app.on('ready', () => {
             pathname: path.join(__dirname, 'view/index.html'),
         })
     )
+
+    // Build Menu Template
+    const menu = Menu.buildFromTemplate(menuTemplate)
+
+    // Implement Menu Template
+    Menu.setApplicationMenu(menu)
 })
