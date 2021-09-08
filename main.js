@@ -3,6 +3,7 @@ const path = require('path')
 const { app, Menu, BrowserWindow } = require('electron')
 
 let mainWindow = null
+let addItemWindow = null
 
 app.on('ready', () => {
     // Initialize mainWindow with BrowserWindow
@@ -24,10 +25,35 @@ app.on('ready', () => {
     Menu.setApplicationMenu(menu)
 })
 
+const addItemWindowFunction = () => {
+    // Initialize mainWindow with BrowserWindow
+    addItemWindow = new BrowserWindow({
+        width: 300,
+        height: 300,
+    })
+
+    // Load index.html
+    addItemWindow.loadURL(
+        url.format({
+            slashes: true,
+            protocol: 'file',
+            pathname: path.join(__dirname, 'view/index.html'),
+        })
+    )
+}
+
 const menuTemplate = [
     {
         label: 'File',
-        submenu: [{ label: 'Add New Item' }, { label: 'Clear all items' }],
+        submenu: [
+            {
+                label: 'Add New Item',
+                click() {
+                    addItemWindowFunction()
+                },
+            },
+            { label: 'Clear all items' },
+        ],
     },
     {
         label: 'Quit',
