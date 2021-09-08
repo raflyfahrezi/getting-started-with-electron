@@ -18,6 +18,10 @@ app.on('ready', () => {
         })
     )
 
+    mainWindow.on('closed', () => {
+        app.quit()
+    })
+
     // Build Menu Template
     const menu = Menu.buildFromTemplate(menuTemplate)
 
