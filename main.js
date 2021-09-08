@@ -2,8 +2,6 @@ const url = require('url')
 const path = require('path')
 const { app, Menu, BrowserWindow } = require('electron')
 
-const { menuTemplate } = require('./utils')
-
 let mainWindow = null
 
 app.on('ready', () => {
@@ -25,3 +23,17 @@ app.on('ready', () => {
     // Implement Menu Template
     Menu.setApplicationMenu(menu)
 })
+
+const menuTemplate = [
+    {
+        label: 'File',
+        submenu: [{ label: 'Add New Item' }, { label: 'Clear all items' }],
+    },
+    {
+        label: 'Quit',
+        accelerator: 'Ctrl+Q',
+        click() {
+            app.quit()
+        },
+    },
+]
