@@ -44,6 +44,11 @@ const addItemWindowFunction = () => {
             pathname: path.join(__dirname, 'view/add.html'),
         })
     )
+
+    // Saving Memory
+    addItemWindow.on('close', () => {
+        addItemWindow = null
+    })
 }
 
 const menuTemplate = [
