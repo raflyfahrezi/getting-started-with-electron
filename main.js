@@ -37,7 +37,7 @@ const addItemWindowFunction = () => {
         url.format({
             slashes: true,
             protocol: 'file',
-            pathname: path.join(__dirname, 'view/index.html'),
+            pathname: path.join(__dirname, 'view/add.html'),
         })
     )
 }
